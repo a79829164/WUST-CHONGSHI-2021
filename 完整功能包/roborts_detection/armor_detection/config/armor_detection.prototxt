@@ -1,0 +1,16 @@
+name: "yolo_bridge"
+selected_algorithm: "yolo_bridge"
+undetected_armor_delay: 100
+camera_name: "back_camera"
+camera_gimbal_transform {
+    offset_x :0
+    offset_y :0
+    offset_z :15
+    offset_pitch :1.74
+    offset_yaw :1.2
+}
+
+projectile_model_info {
+    init_v: 15 # Launching projectile velocity
+    init_k: 0.026
+}

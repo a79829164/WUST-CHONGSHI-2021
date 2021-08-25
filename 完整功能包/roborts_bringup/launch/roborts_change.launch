@@ -1,0 +1,28 @@
+<launch>
+  <master auto="start"/>
+  <arg name="map" value="icra2020"/>
+
+  <!-- Run the robot sdk interface -->
+  <include file="$(find roborts_bringup)/launch/base.launch" />
+
+
+  <!-- Run the rplidar node -->
+  <node name="rplidar_node" pkg="rplidar_ros" type="rplidarNode" output="screen">
+      <param name="serial_port" type="string" value="/dev/ttyUSB0"/>
+      <param name="serial_baudrate" type="int" value="256000"/>
+      <param name="frame_id" type="string" value="base_laser_link"/>
+      <param name="inverted" type="bool" value="false"/>
+      <param name="angle_compensate" type="bool" value="true"/>
+  </node>
+
+  <!-- Run the camera node -->
+  <node pkg="roborts_camera" type="roborts_camera_node" name="roborts_camera_node" respawn="false" />
+  <!-- Run the client node -->	
+  <node pkg="roborts_detection" type="armor_detection_client" name="armor_detection_client" respawn="false" />
+  <!-- Run the detection node -->
+  <node pkg="roborts_detection" type="armor_detection_node" name="armor_detection_node" respawn="false" />
+  <!-- Run the shoot node -->
+  <node pkg="roborts_decision" type="wust_shoot_test" name="wust_shoot_test" respawn="false" /> 
+
+</launch>
+
