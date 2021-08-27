@@ -1,8 +1,3 @@
-<style>
-table {
-margin: auto;
-}
-</style>
 
 ## 1. 软件功能介绍  
 #### **检测识别算法框架：**    
@@ -70,7 +65,7 @@ margin: auto;
 |     Z_real     | 1.200  | 2.800 | 4.000  | 5.400 | 6.200  |
 |   Z_predict    | 1.229  | 2.823 | 4.013  | 5.445 | 6.245  |
 | error   (SRSS) | 0.046  | 0.032 | 0.020  | 0.047 | 0.054  |
-
+</div>
 &emsp;&emsp;通过将目标检测得到的二维（x, y)像素坐标和深度测距得到的深度距离z 进行结合，得到检测目标P的一个实际三维（X, Y, Z)坐标，测试结果如图5所示。
 <div align="center">
 <img src="README.assets/fig11.jpg" style="zoom:50%;" />
